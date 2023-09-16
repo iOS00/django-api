@@ -45,5 +45,5 @@ class CollectDataCommandTestCase(TestCase):
     def test_collect_data_command(self):
         command = Command()
         command.handle()
-        self.assertEqual(Weather.objects.count(), 6)  # number of cities
+        self.assertEqual(Weather.objects.count(), 6) #number of cities
         self.assertGreater(News.objects.count(), 0)
