@@ -1,7 +1,7 @@
 from django.test import TestCase
 from django.urls import reverse
-from weather_news.management.commands.collect_data import Command
-from weather_news.models import Weather, News
+from .management.commands.collect_data import Command
+from .models import Weather, News
 from rest_framework.test import APIClient
 
 
