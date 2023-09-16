@@ -14,11 +14,14 @@ jobs:
         # recommended to specify our app directory containing tests.py
         defaults:
             run:
-                working-directory: ./djangoproject/weather_news/
+                working-directory: ./djangoproject/
         # specify the version(-s) of python for our VM to run on
         strategy:
             matrix:
                 python-version: [3.9]
+
+        env:
+            MODE: "dev"
 
         steps:
             # universal common for most to set workflow environment
