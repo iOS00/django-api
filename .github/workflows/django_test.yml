@@ -20,10 +20,6 @@ jobs:
             matrix:
                 python-version: [3.9]
 
-        env:
-            # dev, production etc., also encrypted names from GitHub secrets
-            MODE: "dev"
-
         steps:
             # universal common for most to set workflow environment
             - uses: actions/checkout@v3
