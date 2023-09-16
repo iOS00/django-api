@@ -1,0 +1,43 @@
+name: Django App Tests
+
+on:
+    # choose the type of trigger
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    # action to perform
+    test:
+        # select VM to run on
+        runs-on: ubuntu-latest
+        # recommended to specify our app directory containing tests.py
+        defaults:
+            run:
+                working-directory: ./djangoproject/weather_news/
+        # specify the version(-s) of python for our VM to run on
+        strategy:
+            matrix:
+                python-version: [3.9]
+
+        env:
+            # dev, production etc., also encrypted names from GitHub secrets
+            MODE: "dev"
+
+        steps:
+            # universal common for most to set workflow environment
+            - uses: actions/checkout@v3
+            # describe step
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                python-version: ${{ matrix.python-version }}
+
+            - name: Install dependencies
+              run: |
+                python -m pip install --upgrade pip
+                pip install -r ../../requirements.txt
+
+            - name: Test App Code
+              run: python ./tests.py
+
