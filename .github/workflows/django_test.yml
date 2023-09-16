@@ -38,4 +38,4 @@ jobs:
                 pip install -r ../requirements.txt
 
             - name: Test App Code
-              run: python weather_news/tests.py
+              run: python ./weather_news/tests.py
