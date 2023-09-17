@@ -1,7 +1,7 @@
 import requests
 import logging
 from django.core.management.base import BaseCommand
-from weather_news.models import Weather, News
+from models import Weather, News
 
 logger = logging.getLogger(__name__)
 
