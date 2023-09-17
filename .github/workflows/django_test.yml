@@ -21,7 +21,7 @@ jobs:
                 python-version: [3.9]
 
         env:
-            DJANGO_SETTINGS_MODULE: ./djangoproject/djangoproject/settings.py
+            DJANGO_SETTINGS_MODULE: /djangoproject/djangoproject/settings.py
 
         steps:
             # universal common for most to set workflow environment
