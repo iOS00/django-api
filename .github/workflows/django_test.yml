@@ -21,7 +21,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r ../requirements.txt  # Adjust the path as needed
+          pip install -r django-api/requirements.txt  # Adjust the path to requirements.txt
+
+      - name: Set PYTHONPATH
+        run: echo "export PYTHONPATH=$PYTHONPATH:$(pwd)/djangoproject" >> $GITHUB_ENV
 
       - name: Set DJANGO_SETTINGS_MODULE
         run: echo "export DJANGO_SETTINGS_MODULE=djangoproject.settings" >> $GITHUB_ENV
